@@ -139,7 +139,7 @@ export const captureOrder = async (req, res) => {
                 {
                   amount: {
                     currency_code: 'USD',
-                    value: (10 * costo) / 100,
+                    value: (5 * costo) / 100,
                   },
                 },
               ],
