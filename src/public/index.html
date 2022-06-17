@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website.com</title>
+</head>
+
+<body>
+  <button id="checkout">Checkout!</button>
+
+  <script>
+    const checkout = document.getElementById("checkout");
+    checkout.addEventListener("click", async () => {
+      try {
+        let _datos = {
+          precio: 1,
+          email: "lucianom@gmail.com",
+          usuario: { uid: 'SoyUnUID' },
+          proyecto: {
+            id: 'soyUnId',
+            datos: {
+              descripcion: "",
+              likes: 0,
+              titulo: "",
+              tags: [],
+              comentarios: [{ uid: "", comentario: "" }],
+              categoria: 1,
+              favs: 0,
+              img_url: "",
+              precio: 0,
+              uid_creador: "",
+              fecha: '',
+            },
+          }
+        }
+
+        const response = await fetch(`/create-order/`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(_datos)
+        });
+        const {data} = await response.json();
+
+        // const respuesta = await fetch(data.links[1].href, {
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   method: "GET",
+        // });
+        // const datos = await respuesta.json();
+        // console.log(data.links)
+
+        window.location.href = data.links[1].href;
+
+        // window.open(data.links[1].href, '_blank'); 
+      } catch (error) {
+        console.log(error)
+      }
+    });
+  </script>
+</body>
+
+</html>
