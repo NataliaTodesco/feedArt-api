@@ -8,7 +8,7 @@ export const PAYPAL_API = 'https://api-m.sandbox.paypal.com' //process.env.PAYPA
 
 // Server
 export const PORT = process.env.PORT || 3000;
-export const HOST = 
-  process.env.NODE_ENV === "production"
-    ? process.env.HOST
-    : "http://localhost:" + PORT;
+export const HOST = 'https://feedart-api.herokuapp.com/'
+  // process.env.NODE_ENV === "production"
+  //   ? process.env.HOST
+  //   : "http://localhost:" + PORT;
