@@ -177,7 +177,7 @@ export const captureOrder = async (req, res) => {
     };
 
     let cabecero = String(params)
-    res.redirect(`http://localhost:3001/completo/${cabecero}`);
+    res.redirect(`http://localhost:3000/completo/${cabecero}`);
 
   } catch (error) {
     console.log(error.message);
@@ -186,7 +186,7 @@ export const captureOrder = async (req, res) => {
 };
 
 export const cancelPayment = (req, res) => {
-  res.redirect("http://localhost:3001/project/"+project.id);
+  res.redirect("http://localhost:3000/project/"+project.id);
   // res.redirect("https://feedart.netlify.app/");
   // res.redirect("/");
 };
