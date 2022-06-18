@@ -176,7 +176,7 @@ export const captureOrder = async (req, res) => {
       },
     };
 
-    localStorage.feedart = JSON.stringify(params)
+    // localStorage.feedart = JSON.stringify(params)
 
     res.redirect(`http://localhost:3000/completo/${project.id}`);
 
