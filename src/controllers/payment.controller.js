@@ -176,8 +176,8 @@ export const captureOrder = async (req, res) => {
       },
     };
 
-    let cabecero = String(params)
-    res.redirect(`http://localhost:3000/completo/${cabecero}`);
+    localStorage.feedart = JSON.stringify(params)
+    // res.redirect(`http://localhost:3000/completo/${cabecero}`);
 
   } catch (error) {
     console.log(error.message);
