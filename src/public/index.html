@@ -46,15 +46,6 @@
         });
         const {data} = await response.json();
 
-        // const respuesta = await fetch(data.links[1].href, {
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   method: "GET",
-        // });
-        // const datos = await respuesta.json();
-        // console.log(data.links)
-
         window.location.href = data.links[1].href;
 
         // window.open(data.links[1].href, '_blank'); 

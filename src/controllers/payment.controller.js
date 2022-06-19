@@ -117,10 +117,7 @@ export const captureOrder = async (req, res) => {
 
     console.log(response.data);
 
-    // let params = "{details: {purchase_units: [{amount: {currency_code: 'USD',value: costo,},payee: {email_address: mail,},payment_instruction: {disbursement_mode: 'INSTANT',platform_fees: [{amount: {currency_code: 'USD',value: (10 * costo) / 100,},},],},shipping: {address: {"+
-    // "address_line_1: 'response.data.purchase_units[0].shipping.address.address_line_1',"+
-    // "admin_area_1: 'response.data.purchase_units[0].shipping.address.admin_area_1',"+
-    // "country_code: response.data.payer.address.country_code,},name: {full_name: response.data.payer.name.given_name+' '+response.data.payer.name.surname    } }, },],},usuario: user.uid,proyecto: {id: project.id,datos: {descripcion: project.datos.descripcion,likes: project.datos.likes,titulo: project.datos.titulo,tags: project.datos.tags,comentarios: project.datos.comentarios,categoria: project.datos.categoria,favs: project.datos.favs,img_url: project.datos.img_url,precio: project.datos.precio,uid_creador: project.datos.uid_creador,fecha: project.datos.fecha,},},}"
+    // let params = "{details: {purchase_units: [{amount: {currency_code: 'USD',value: costo,},payee: {email_address: mail,},payment_instruction: {disbursement_mode: 'INSTANT',platform_fees: [{amount: {currency_code: 'USD',value: (10 * costo) / 100,},},],},shipping: {address: {address_line_1: 'response.data.purchase_units[0].shipping.address.address_line_1',admin_area_1: 'response.data.purchase_units[0].shipping.address.admin_area_1',country_code: response.data.payer.address.country_code,},name: {full_name: response.data.payer.name.given_name+' '+response.data.payer.name.surname    } }, },],},usuario: user.uid,proyecto: {id: project.id,datos: {descripcion: project.datos.descripcion,likes: project.datos.likes,titulo: project.datos.titulo,tags: project.datos.tags,comentarios: project.datos.comentarios,categoria: project.datos.categoria,favs: project.datos.favs,img_url: project.datos.img_url,precio: project.datos.precio,uid_creador: project.datos.uid_creador,fecha: project.datos.fecha,},},}"
 
     let params = {
       details: {
@@ -176,9 +173,10 @@ export const captureOrder = async (req, res) => {
       },
     };
 
+    console.log(params)
     // localStorage.feedart = JSON.stringify(params)
 
-    res.redirect(`http://localhost:3000/completo/${project.id}`);
+    res.redirect(`http://localhost:3000/completo/${project.id}/${response.data.purchase_units[0].shipping.address.address_line_1}/${response.data.purchase_units[0].shipping.address.admin_area_1}/${response.data.payer.address.country_code}`);
 
   } catch (error) {
     console.log(error.message);
