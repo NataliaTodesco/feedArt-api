@@ -176,7 +176,7 @@ export const captureOrder = async (req, res) => {
     console.log(params)
     // localStorage.feedart = JSON.stringify(params)
 
-    res.redirect(`http://localhost:3000/completo/${project.id}/${response.data.purchase_units[0].shipping.address.address_line_1}/${response.data.purchase_units[0].shipping.address.admin_area_1}/${response.data.payer.address.country_code}`);
+    res.redirect(`http://localhost:3000/completo/${project.id}/${response.data.purchase_units[0].shipping.address.address_line_1}/${response.data.purchase_units[0].shipping.address.admin_area_1}/${response.data.payer.address.country_code}/${email}`);
 
   } catch (error) {
     console.log(error.message);
