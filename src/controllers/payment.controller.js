@@ -177,6 +177,7 @@ export const captureOrder = async (req, res) => {
     // localStorage.feedart = JSON.stringify(params)
 
     res.redirect(`http://localhost:3000/completo/${project.id}/${response.data.purchase_units[0].shipping.address.address_line_1}/${response.data.purchase_units[0].shipping.address.admin_area_1}/${response.data.payer.address.country_code}/${mail}/${user.uid}`);
+    
     // res.redirect(`https://feedart-3bdc9.web.app/completo/${project.id}/${response.data.purchase_units[0].shipping.address.address_line_1}/${response.data.purchase_units[0].shipping.address.admin_area_1}/${response.data.payer.address.country_code}/${mail}/${user.uid}`);
 
   } catch (error) {
